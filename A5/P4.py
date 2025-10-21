@@ -17,7 +17,12 @@ use_extra_tests = False
 
 
 def search_tree(root, dna):
-    
+    if root == None or root.keys() == dna:
+        return root
+    if dna < root.keys():
+        return search_tree(root*2, dna) # F5Ø3 left(i) = 2i
+    else:
+        return search_tree(root*2 + 1 , dna) # F5Ø3 right(i) = 2i+1
 
 
 class Node:
